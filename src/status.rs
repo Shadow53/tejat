@@ -1,5 +1,5 @@
 use crate::mime::Mime;
-use crate::uri::URI;
+use crate::uri::GeminiUrl;
 use std::{fmt, ops::Deref, str::FromStr};
 
 #[derive(Debug, PartialEq, Eq)]
@@ -205,13 +205,13 @@ impl Success {
 
 impl_code! {
     Redirect {
-        Code::TEMPORARY_REDIRECT => Temporary { target: URI },
-        Code::PERMANENT_REDIRECT => Permanent { target: URI },
+        Code::TEMPORARY_REDIRECT => Temporary { target: GeminiUrl },
+        Code::PERMANENT_REDIRECT => Permanent { target: GeminiUrl },
     }
 }
 
 impl Redirect {
-    pub fn target(&self) -> &URI {
+    pub fn target(&self) -> &GeminiUrl {
         match self {
             Self::Temporary { target } | Self::Permanent { target } => target
         }
