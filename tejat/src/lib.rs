@@ -1,4 +1,4 @@
-//pub mod gemtext;
+pub mod gemtext;
 pub use mime;
 pub mod status;
 pub mod uri;
