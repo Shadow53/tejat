@@ -1,0 +1,56 @@
+[site]
+base_url = "gemini://example.com"
+title = "My Example Site"
+copyright = "Owner"
+
+[content]
+# Create asciify Tera function?
+enable_ascii_header = true
+header_text = "Custom Header"
+footer_text = "Custom Footer"
+# Collapse multiple empty lines into a single empty line
+collapse_empty_lines = false
+convert_emoji = false
+
+[generator]
+# Create three sites in output/gemtext, output/markdown, and output/html
+formats = ["gemtext", "html", "rss"]
+link_type = "absolute" # "relative", "root-relative"
+# Footer and <meta> tags
+disable_generator_notice = false
+# Number of items on single page
+paginate = 10
+pretty_urls = true
+
+[html]
+generate_toc = false
+# Whether to include post previews in link cards
+previews_in_lists = false
+list_item_format = "card" # ???
+minify = false
+# Detect (un)ordered lists and make them proper HTML
+format_lists = true
+syntax_highlighting = true
+# Interpret *this* as italics (true) or literal asterisks (false)
+keep_inline_formatting = true
+
+[server]
+port = 8080
+enable = true
+live_reload = true
+
+
+# TODO: function blocks for including only with certain outputs
+# TODO: related content?
+# TODO: tags/categories?
+# TODO: Custom CSS support
+# TODO: shortcodes for images, videos, other media
+# TODO: General theme template support? Or restrict to shortcodes in content + CSS?
+
+# Front Matter
+title = "Page Title"
+author = "Author"
+published = "Some ISO Date"
+updated = "Some other ISO Date"
+draft = false
+
